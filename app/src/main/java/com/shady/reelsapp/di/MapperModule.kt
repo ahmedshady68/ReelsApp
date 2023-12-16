@@ -1,7 +1,7 @@
 package com.shady.reelsapp.di
 
 import com.shady.data.mapper.ReelDataMapper
-import com.shady.reelsapp.ui.mapper.ReelsPresentationMapper
+import com.shady.reelsapp.presentation.mapper.ReelsPresentationMapper
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

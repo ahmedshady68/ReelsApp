@@ -5,10 +5,10 @@ import com.shady.domain.entity.ReelsDomainModel
 import com.shady.reelsapp.helper.FakeGetReelsException
 import com.shady.reelsapp.helper.FakeGetReelsSuccess
 import com.shady.reelsapp.helper.FakeGetReelsThrowable
-import com.shady.reelsapp.ui.mapper.ReelsPresentationMapper
-import com.shady.reelsapp.ui.model.ClipPresentationModel
-import com.shady.reelsapp.ui.model.ReelsIntent
-import com.shady.reelsapp.ui.model.ReelsPresentationModel
+import com.shady.reelsapp.presentation.mapper.ReelsPresentationMapper
+import com.shady.reelsapp.presentation.model.ClipPresentationModel
+import com.shady.reelsapp.presentation.model.ReelsIntent
+import com.shady.reelsapp.presentation.model.ReelsPresentationModel
 import com.shady.reelsapp.helper.ViewModelTest
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert

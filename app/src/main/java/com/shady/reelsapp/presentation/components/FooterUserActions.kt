@@ -1,4 +1,4 @@
-package com.shady.reelsapp.ui.components
+package com.shady.reelsapp.presentation.components
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -10,7 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.shady.reelsapp.R
-import com.shady.reelsapp.ui.model.ClipPresentationModel
+import com.shady.reelsapp.presentation.model.ClipPresentationModel
 
 
 @Composable
@@ -20,7 +20,7 @@ fun FooterUserActions(reel: ClipPresentationModel, modifier: Modifier) {
         modifier = Modifier.padding(end = 12.dp)
     ) {
         UserActionWithText(
-            drawableRes = R.drawable.ic_favorite_border,
+            drawableRes = R.drawable.ic_favorite,
             text = reel.reelLikeCount,
             iconColor = Color.White
         )
@@ -28,7 +28,7 @@ fun FooterUserActions(reel: ClipPresentationModel, modifier: Modifier) {
         Spacer(modifier = Modifier.height(20.dp))
 
         UserActionWithText(
-            drawableRes = R.drawable.ic_send,
+            drawableRes = R.drawable.ic_share,
             text = reel.reelShareCount,
             iconColor = Color.White
         )

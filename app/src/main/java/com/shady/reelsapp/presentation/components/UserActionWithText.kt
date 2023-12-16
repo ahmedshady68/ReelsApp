@@ -1,4 +1,4 @@
-package com.shady.reelsapp.ui.components
+package com.shady.reelsapp.presentation.components
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.layout.Spacer

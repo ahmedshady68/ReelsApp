@@ -1,9 +1,9 @@
-package com.shady.reelsapp.ui.mapper
+package com.shady.reelsapp.presentation.mapper
 
 import com.shady.domain.entity.ClipDomainModel
 import com.shady.domain.entity.ReelsDomainModel
-import com.shady.reelsapp.ui.model.ClipPresentationModel
-import com.shady.reelsapp.ui.model.ReelsPresentationModel
+import com.shady.reelsapp.presentation.model.ClipPresentationModel
+import com.shady.reelsapp.presentation.model.ReelsPresentationModel
 
 class ReelsPresentationMapper {
     fun apply(domainModel: ReelsDomainModel?): ReelsPresentationModel {

@@ -1,4 +1,4 @@
-package com.shady.reelsapp.ui.components
+package com.shady.reelsapp.presentation.components
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Box
@@ -9,8 +9,7 @@ import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.shady.reelsapp.ui.model.ReelsViewState
-import com.shady.reelsapp.ui.reels.VideoPlayer
+import com.shady.reelsapp.presentation.model.ReelsViewState
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -31,14 +30,15 @@ fun ReelsList(reelsList: ReelsViewState?) {
         ) {
             if (reelsList?.reelsPresentationModel?.reelsList == null) {
                 return@Box
-            } // redesign this area ..
+            }
             VideoPlayer(
                 url = reelsList.reelsPresentationModel
                     .reelsList[index % reelsList.reelsPresentationModel.reelsList.size].reelUrl
             )
             Column(Modifier.align(Alignment.BottomStart)) {
                 ReelsFooter(
-                    reelsList.reelsPresentationModel.reelsList[index % reelsList.reelsPresentationModel.reelsList.size]
+                    reelsList.reelsPresentationModel.reelsList[index % reelsList
+                        .reelsPresentationModel.reelsList.size]
                 )
             }
         }

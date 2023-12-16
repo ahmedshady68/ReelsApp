@@ -1,4 +1,4 @@
-package com.shady.reelsapp.ui.model
+package com.shady.reelsapp.presentation.model
 
 data class ReelsPresentationModel(
     val reelsList: List<ClipPresentationModel>?,

@@ -1,4 +1,4 @@
-package com.shady.reelsapp.ui.reels
+package com.shady.reelsapp.presentation.screens
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -7,8 +7,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.shady.reelsapp.ui.components.ReelsList
-import com.shady.reelsapp.ui.model.ReelsViewState
+import com.shady.reelsapp.presentation.components.ReelsList
+import com.shady.reelsapp.presentation.model.ReelsViewState
 
 @Composable
 fun ReelsScreen(reelsList: ReelsViewState?) {

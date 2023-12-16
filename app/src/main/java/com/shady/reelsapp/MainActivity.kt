@@ -12,11 +12,9 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.lifecycleScope
-import com.shady.reelsapp.ui.model.ClipPresentationModel
-import com.shady.reelsapp.ui.model.ReelsIntent
-import com.shady.reelsapp.ui.model.ReelsPresentationModel
-import com.shady.reelsapp.ui.model.ReelsViewState
-import com.shady.reelsapp.ui.reels.ReelsApp
+import com.shady.reelsapp.presentation.components.ReelsAppPreview
+import com.shady.reelsapp.presentation.model.ReelsIntent
+import com.shady.reelsapp.presentation.screens.ReelsApp
 import com.shady.reelsapp.ui.theme.ReelsAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -33,7 +31,10 @@ class MainActivity : ComponentActivity() {
                 Surface(
                     modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background
                 ) {
-                    ReelsApp(reelsList = reelsViewModel.reels.collectAsState().value)
+                    ReelsApp(
+                        reelsList = reelsViewModel.reels.collectAsState().value,
+                        retryOnClick = ::sendIntent
+                    )
                 }
             }
         }
@@ -51,21 +52,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun GreetingPreview() {
     ReelsAppTheme {
-        ReelsApp(
-            ReelsViewState(
-                ReelsPresentationModel(
-                    listOf(
-                        ClipPresentationModel(
-                            "reelTitle",
-                            "reelLikeCount",
-                            "reelShareCount",
-                            "reelUrl"
-                        )
-                    ), ""
-                ),
-                false,
-                null
-            )
-        )
+        ReelsAppPreview()
     }
 }

@@ -87,5 +87,9 @@ dependencies {
     // View Pager
     implementation("com.google.accompanist:accompanist-pager:0.30.1")
     // Exo Player
-    implementation("com.google.android.exoplayer:exoplayer:2.19.1")
+    implementation("androidx.media3:media3-exoplayer:1.2.0")
+    implementation("androidx.media3:media3-exoplayer-dash:1.2.0")
+    implementation("androidx.media3:media3-ui:1.2.0")
+    // lottie Compose
+    implementation("com.airbnb.android:lottie-compose:6.0.1")
 }

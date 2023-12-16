@@ -3,9 +3,9 @@ package com.shady.reelsapp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.shady.domain.usecase.GetReelsUseCaseParent
-import com.shady.reelsapp.ui.mapper.ReelsPresentationMapper
-import com.shady.reelsapp.ui.model.ReelsIntent
-import com.shady.reelsapp.ui.model.ReelsViewState
+import com.shady.reelsapp.presentation.mapper.ReelsPresentationMapper
+import com.shady.reelsapp.presentation.model.ReelsIntent
+import com.shady.reelsapp.presentation.model.ReelsViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.channels.Channel
