@@ -15,3 +15,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "ReelsApp"
 include(":app")
+include(":domain")
+include(":data")
