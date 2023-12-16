@@ -82,6 +82,10 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
     // Testing
     testImplementation("io.mockk:mockk:1.13.8")
-    testImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.8.0-RC")
-    testImplementation ("androidx.arch.core:core-testing:2.2.0")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.8.0-RC")
+    testImplementation("androidx.arch.core:core-testing:2.2.0")
+    // View Pager
+    implementation("com.google.accompanist:accompanist-pager:0.30.1")
+    // Exo Player
+    implementation("com.google.android.exoplayer:exoplayer:2.19.1")
 }
