@@ -9,7 +9,7 @@ import org.junit.Test
 
 class GetReelsUseCaseTest {
     private val repo: ReelsRepo = mockk()
-    private val useCase: GetReelsUseCase = GetReelsUseCase(repo)
+    private val useCase: GetReelsUseCaseParent = GetReelsUseCase(repo)
 
     @Test
     fun `call repo When call usa case`() = runTest {

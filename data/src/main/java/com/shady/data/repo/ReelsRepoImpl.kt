@@ -10,6 +10,6 @@ class ReelsRepoImpl(
     private val dataMapper: ReelDataMapper,
 ) :
     ReelsRepo {
-    override suspend fun getReelsFromRemote(): ReelsDomainModel? =
+    override suspend fun getReelsFromRemote(): ReelsDomainModel =
         dataMapper.apply(apiService.getReels())
 }
