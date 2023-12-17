@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
+import com.shady.reelsapp.presentation.components.ReelsList
 import com.shady.reelsapp.presentation.model.ReelsViewState
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -17,7 +18,7 @@ import com.shady.reelsapp.presentation.model.ReelsViewState
 fun ReelsSuccessScreen(state: ReelsViewState?) {
     state?.reelsPresentationModel?.reelsList?.let {
         Box {
-            ReelsScreen(reelsList = state)
+            ReelsList(reelsList = state)
             TopAppBar(
                 title = {
                     Text(

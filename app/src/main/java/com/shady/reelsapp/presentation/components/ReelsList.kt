@@ -14,7 +14,6 @@ import com.shady.reelsapp.presentation.model.ReelsViewState
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun ReelsList(reelsList: ReelsViewState?) {
-
     val pageCount = Int.MAX_VALUE
     val pagerState = rememberPagerState(
         initialPage = 0, initialPageOffsetFraction = 0f
