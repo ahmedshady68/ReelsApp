@@ -21,7 +21,7 @@ fun ReelsFooter(reel: ClipPresentationModel) {
             reel = reel, modifier = Modifier.weight(8f)
         )
         FooterUserActions(
-            reel = reel, modifier = Modifier.weight(8f)
+            reel = reel
         )
     }
 }

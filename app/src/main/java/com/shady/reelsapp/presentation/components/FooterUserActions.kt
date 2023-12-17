@@ -14,10 +14,10 @@ import com.shady.reelsapp.presentation.model.ClipPresentationModel
 
 
 @Composable
-fun FooterUserActions(reel: ClipPresentationModel, modifier: Modifier) {
+fun FooterUserActions(reel: ClipPresentationModel) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.padding(end = 12.dp)
+        modifier = Modifier.padding(start = 20.dp, end = 20.dp)
     ) {
         UserActionWithText(
             drawableRes = R.drawable.ic_favorite,
