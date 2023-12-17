@@ -31,18 +31,18 @@ fun VideoPlayer(url: String) {
             exoPlayer.videoScalingMode = C.VIDEO_SCALING_MODE_SCALE_TO_FIT_WITH_CROPPING
             exoPlayer.prepare()
         }
-    AndroidView(factory = {
-        PlayerView(context).apply {
-            useController = false
-            resizeMode = AspectRatioFrameLayout.RESIZE_MODE_ZOOM
-            player = exoPlayer
-            layoutParams = FrameLayout.LayoutParams(
-                MATCH_PARENT, MATCH_PARENT
-            )
-        }
-    })
+
     DisposableEffect(
-        Unit
+        key1 = AndroidView(factory = {
+            PlayerView(context).apply {
+                useController = false
+                resizeMode = AspectRatioFrameLayout.RESIZE_MODE_ZOOM
+                player = exoPlayer
+                layoutParams = FrameLayout.LayoutParams(
+                    MATCH_PARENT, MATCH_PARENT
+                )
+            }
+        })
     ) {
         onDispose { exoPlayer.release() }
     }
