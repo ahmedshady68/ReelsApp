@@ -1,4 +1,4 @@
-package com.shady.reelsapp
+package com.shady.data
 
 import org.junit.Test
 
