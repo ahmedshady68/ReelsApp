@@ -19,31 +19,30 @@ import androidx.media3.ui.PlayerView
 @Composable
 fun VideoPlayer(url: String) {
     val context = LocalContext.current
-    val exoPlayer = ExoPlayer.Builder(context)
-        .build()
-        .also { exoPlayer ->
-            val mediaItem = MediaItem.Builder()
-                .setUri(url)
-                .build()
-            exoPlayer.setMediaItem(mediaItem)
-            exoPlayer.playWhenReady = true
-            exoPlayer.repeatMode = Player.REPEAT_MODE_ALL
-            exoPlayer.videoScalingMode = C.VIDEO_SCALING_MODE_SCALE_TO_FIT_WITH_CROPPING
-            exoPlayer.prepare()
+    val exoPlayer = ExoPlayer.Builder(context).build().also { exoPlayer ->
+        val mediaItem = MediaItem.Builder().setUri(url).build()
+        exoPlayer.setMediaItem(mediaItem)
+        exoPlayer.playWhenReady = true
+        exoPlayer.repeatMode = Player.REPEAT_MODE_ALL
+        exoPlayer.videoScalingMode = C.VIDEO_SCALING_MODE_SCALE_TO_FIT_WITH_CROPPING
+        exoPlayer.prepare()
+    }
+    AndroidView(factory = {
+        PlayerView(context).apply {
+            useController = false
+            resizeMode = AspectRatioFrameLayout.RESIZE_MODE_ZOOM
+            player = exoPlayer
+            layoutParams = FrameLayout.LayoutParams(
+                MATCH_PARENT, MATCH_PARENT
+            )
         }
-
+    })
     DisposableEffect(
-        key1 = AndroidView(factory = {
-            PlayerView(context).apply {
-                useController = false
-                resizeMode = AspectRatioFrameLayout.RESIZE_MODE_ZOOM
-                player = exoPlayer
-                layoutParams = FrameLayout.LayoutParams(
-                    MATCH_PARENT, MATCH_PARENT
-                )
-            }
-        })
+        key1 = Unit
     ) {
-        onDispose { exoPlayer.release() }
+        onDispose {
+            // release player when no longer needed
+            exoPlayer.release()
+        }
     }
 }
