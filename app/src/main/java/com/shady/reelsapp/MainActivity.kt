@@ -11,7 +11,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import com.shady.reelsapp.presentation.components.ReelsAppPreview
 import com.shady.reelsapp.presentation.model.ReelsIntent
 import com.shady.reelsapp.presentation.screens.ReelsApp
@@ -42,7 +44,9 @@ class MainActivity : ComponentActivity() {
 
     private fun sendIntent() {
         lifecycleScope.launch {
-            reelsViewModel.intentChannel.send(ReelsIntent.GetReels)
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                reelsViewModel.intentChannel.send(ReelsIntent.GetReels)
+            }
         }
     }
 }
