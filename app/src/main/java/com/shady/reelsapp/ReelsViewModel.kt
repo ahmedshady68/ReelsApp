@@ -10,7 +10,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.consumeAsFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -25,10 +25,10 @@ class ReelsViewModel @Inject constructor(
 
     private val _reels: MutableStateFlow<ReelsViewState?> =
         MutableStateFlow(ReelsViewState())
-    val reels: StateFlow<ReelsViewState?> get() = _reels
+    val reels = _reels.asStateFlow()
 
     init {
-        processCategory()
+        processReels()
     }
 
     private val exceptionHandler: CoroutineExceptionHandler =
@@ -44,7 +44,7 @@ class ReelsViewModel @Inject constructor(
             }
         }
 
-    private fun processCategory() {
+    private fun processReels() {
         viewModelScope.launch {
             intentChannel.consumeAsFlow().collect {
                 when (it) {

@@ -92,4 +92,6 @@ dependencies {
     implementation("androidx.media3:media3-ui:1.2.0")
     // lottie Compose
     implementation("com.airbnb.android:lottie-compose:6.0.1")
+    // debugImplementation because LeakCanary should only run in debug builds.
+    debugImplementation("com.squareup.leakcanary:leakcanary-android:2.12")
 }
